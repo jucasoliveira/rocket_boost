@@ -14,7 +14,6 @@ public class Movements : MonoBehaviour
 
 
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
