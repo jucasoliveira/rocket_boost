@@ -6,14 +6,20 @@ public class CollisionHandler : MonoBehaviour
 {
 
     [SerializeField] float levelLoadDelay = 1.5f;
+    [SerializeField] AudioClip crashAudio;
+    [SerializeField] AudioClip successAudio;
 
     private Movements player;
     private AudioSource audioSource;
 
-    private void OnCollisionEnter(Collision collision)
+    void Start()
     {
         player = GetComponent<Movements>();
         audioSource = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
         switch (collision.gameObject.tag)
         {
             case "Friendly":
@@ -36,17 +42,15 @@ public class CollisionHandler : MonoBehaviour
     void MoveToNextLevel()
     {
         player.enabled = false; // Disable player movement
-        audioSource.Stop(); // Stop any ongoing audio
+        audioSource.PlayOneShot(successAudio); // Play success audio
         Invoke("LoadNextLevel", levelLoadDelay);
     }
-
-
 
     void StartCrashSequence()
     {
         // Add crash effects here (e.g., play sound, show explosion, etc.)
         player.enabled = false; // Disable player movement
-        audioSource.Stop(); // Stop any ongoing audio
+        audioSource.PlayOneShot(crashAudio); // Play crash audio
         Invoke("ReloadLevel", levelLoadDelay); // Reload the level after a delay
     }
 

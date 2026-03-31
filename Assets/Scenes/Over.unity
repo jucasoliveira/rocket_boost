@@ -731,7 +731,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 9c011078a5922468db5c8a6015cac5fa, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -829,6 +829,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad94054dfceb434bb1cd6d0d3cea490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionHandler
+  levelLoadDelay: 1.5
+  crashAudio: {fileID: 8300000, guid: 23b6638c42fe744bbab74b206ee4fa43, type: 3}
+  successAudio: {fileID: 8300000, guid: 07994e4d8113b4921aa2d2ce01f8f347, type: 3}
 --- !u!1001 &872800904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1855,6 +1858,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6555577362613525134, guid: 3ec3f2154ed0d4e3aa335c781e9ce1f9, type: 3}
+      propertyPath: thrustAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c011078a5922468db5c8a6015cac5fa, type: 3}
     - target: {fileID: 6555577362613525134, guid: 3ec3f2154ed0d4e3aa335c781e9ce1f9, type: 3}
       propertyPath: thrustForce
       value: 30
